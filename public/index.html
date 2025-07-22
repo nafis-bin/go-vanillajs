@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reeling it movies</title>
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="manifest" href="/app.webmanifest">
+	<link rel="shortcut icon" href="/images/icon.png">
+	<base href="/">
+</head>
+<body>
+	<header>
+		<h1><img src="/images/logo.png" alt="reelingit" height="35"></h1>
+		<nav>
+			<ul>
+				<li><a class="navlink" href="/">Movies</a></li>
+				<li><a class="navlink" href="/account/Favorites">Favorites</a></li>
+				<li><a class="navlink" href="/account/watchlist">Watchlist</a></li>
+				<li><a class="navlink" href="/account/">My Account</a></li>
+			</ul>
+		</nav>
+
+		<div>
+			<form onsubmit="app.search(event)">
+				<input type="search" placeholder="Search movies">
+			</form>
+		</div>
+	</header>
+	<main>
+	</main>
+
+	<dialog id="alert-modal">
+		<h3>Error</h3>
+		<p>There was an error loading the page</p>
+		<button onclick="app.closeError()">OK</button>
+	</dialog>
+	<!-- templates -->
+	 <template id="template-home">
+
+		<section class="vertical-scroll" id="top-10">
+			<h2>This week's top movies</h2>
+			<ul>
+
+			</ul>
+		</section>
+
+		<section class="vertical-scroll" id="random">
+			<h2>Something to watch today</h2>
+			<ul>
+
+			</ul>
+		</section>
+
+	 </template>
+
+    <template id="template-movie-details">
+        <article id="movie">
+            <h2><animated-loading elements="2"></animated-loading></h2>
+            <h3></h3>
+            <header>
+                <img src="" alt="Poster">
+                <youtube-embed id="trailer">Youtube loading...</youtube-embed>
+                <section id="actions">
+                    <dl id="metadata">
+                    </dl>
+                    <button>Add to Favorites</button>
+                    <button>Add to Watchlist</button>    
+                </section>
+            </header>
+            <ul id="genres"></ul>
+            <p id="overview"></p>
+            <ul id="cast"></ul>
+        </article>
+    </template>
+	<footer>
+		<p>(C) Reelingit - frontendmasters.com</p>
+	</footer>
+	<script src="/app.js" type="module" defer></script>
+</body>
+</html>
